@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lirik bunga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="garden"></canvas>
+<main id="stage" class="stage" aria-live="polite"></main>
+<header class="top"><h1 id="title"></h1><p id="artist"></p><p id="hint">Ketuk layar untuk menanam bunga</p></header>
+<button id="bStart" class="start">Putar lagu</button>
+<nav class="bar">
+  <div class="seek"><span id="tNow">0:00</span><input id="seek" type="range" min="0" max="1000" step="100" value="0" aria-label="Posisi lagu"><span id="tAll">0:00</span></div>
+  <div class="btns"><button id="bPlay">Putar</button><button id="bRe">Ulangi</button><button id="bSet">Atur</button></div>
+</nav>
+<aside id="panel" class="panel" aria-hidden="true">
+  <div id="fields"></div>
+  <label><span>Muat file lirik (.lrc)</span><input id="fLrc" type="file" accept=".lrc,.txt"></label>
+  <label><span>Muat musik</span><input id="fAu" type="file" accept="audio/*"></label>
+  <small>Atau taruh musik di folder ini dengan nama <code>musik.mp3</code>. Tanpa musik, lirik jalan sendiri mengikuti waktu LRC. Pintasan: Spasi putar/jeda, ← → geser 5 detik, S buka panel.</small>
+  <div class="row"><button id="bReset">Atur ulang</button></div>
+</aside>
+<audio id="au" preload="auto"></audio>
+<script src="config.js"></script>
+<script src="lirik.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
